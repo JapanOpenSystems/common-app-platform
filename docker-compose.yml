@@ -5,9 +5,14 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./my-react-router-app:/usr/src/app 
-    working_dir: /usr/src/app/my-react-router-app
+    working_dir: /usr/src/app
     command: yarn dev
     ports:
       - "3000:3000"
       - "5173:5173"
-    stdin_open: true 
+      - "6006:6006"
+    environment:
+      - HOST=0.0.0.0
+      - STORYBOOK_HOST=0.0.0.0
+    stdin_open: true
+    tty: true 

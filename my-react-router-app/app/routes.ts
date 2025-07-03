@@ -8,7 +8,5 @@ import {
 export default [
   index("routes/home.tsx"),
   route("login", "routes/login.tsx"),
-  ...prefix("home",[
-    route("dashbord", "routes/dashbord.tsx")
-  ])
+  route("dashbord", "routes/dashbord.tsx"),
 ] satisfies RouteConfig;
