@@ -21,7 +21,7 @@ export const MenuList = React.memo<MenuListProps>(({
   return (
     <div className={`grid grid-cols-${columns} gap-x-4 gap-y-2 w-full`}>
       {items.map((item) => (
-        <Button variant='solid-fill' size='md'>
+        <Button key={item.id} variant='solid-fill' size='md'>
           <Link to={item.to}>{item.label}</Link>
         </Button>
       ))}
