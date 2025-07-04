@@ -14,7 +14,7 @@ export function meta({}: Route.MetaArgs) {
     { id: "data-search", to: "/", label: "データ検索" },
     { id: "code-management", to: "/", label: "コード管理" },
     { id: "report-output", to: "/", label: "帳票出力" },
-    { id: "hidden-by-permission", to: "/", label: "権限で見えないもの" },
+    { id: "", to: "", label: "", is_hidden: true},
     { id: "batch-update", to: "/", label: "一括更新" },
     { id: "exit", to: "/", label: "終了" },
   ];

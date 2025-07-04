@@ -12,6 +12,7 @@ interface MenuItem {
   id: string;
   to: string;
   label: string;
+  is_hidden?: boolean;
 }
 
 export const MenuList = React.memo<MenuListProps>(({ 
@@ -21,7 +22,7 @@ export const MenuList = React.memo<MenuListProps>(({
   return (
     <div className={`grid grid-cols-${columns} gap-x-4 gap-y-2 w-full`}>
       {items.map((item) => (
-        <Button key={item.id} variant='outline' size='md'>
+        <Button key={item.id} variant='outline' size='md' hidden={item.is_hidden}>
           <Link to={item.to}>{item.label}</Link>
         </Button>
       ))}

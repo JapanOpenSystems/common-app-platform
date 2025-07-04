@@ -66,17 +66,18 @@ export type ButtonProps = {
   className?: string;
   variant?: ButtonVariant;
   size: ButtonSize;
+  hidden?: boolean;
 } & (
   | ({ asChild?: false } & ComponentProps<'button'>)
   | { asChild: true; children: React.ReactNode }
 );
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
-  const { asChild, children, className, variant = 'solid-fill', size, ...rest } = props;
+  const { asChild, children, className, variant = 'solid-fill', size, hidden, ...rest } = props;
 
   const classNames = `${buttonBaseStyle} ${buttonSizeStyle[size]} ${
     buttonVariantStyle[variant]
-  } ${className ?? ''}`;
+  } ${hidden ? 'invisible' : ''} ${className ?? ''}`;
 
   if (asChild) {
     return (
