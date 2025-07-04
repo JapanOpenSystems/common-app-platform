@@ -1,5 +1,6 @@
 import type { Route } from "./+types/home";
 import { MenuList } from "~/components/menu";
+import { Header } from "~/layouts/header";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -21,8 +22,11 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
   return (
-    <div className="max-w-[1200px] mx-auto p-6">      
-      <MenuList items={menuListItems} columns={2} />
-    </div>
+    <>
+      <Header /> 
+      <div className="max-w-[1200px] mx-auto p-6">
+        <MenuList items={menuListItems} columns={2} />
+      </div> 
+    </>
   );
 }
