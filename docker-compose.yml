@@ -3,6 +3,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        USER_ID: ${USER_ID:-1000}
+        GROUP_ID: ${GROUP_ID:-1000}
     volumes:
       - ./:/usr/src/app 
     working_dir: /usr/src/app/frontend
@@ -11,3 +14,6 @@ services:
       - "3000:3000"
       - "5173:5173"
       - "6006:6006"
+    environment:
+      - USER_ID=${USER_ID:-1000}
+      - GROUP_ID=${GROUP_ID:-1000}  

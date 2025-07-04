@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Link } from "react-router";
-import { Button } from "./design/Button/Button";
+import { Button } from "./design";
 
 interface MenuListProps {
     items: MenuItem[];
@@ -21,7 +21,7 @@ export const MenuList = React.memo<MenuListProps>(({
   return (
     <div className={`grid grid-cols-${columns} gap-x-4 gap-y-2 w-full`}>
       {items.map((item) => (
-        <Button key={item.id} variant='solid-fill' size='md'>
+        <Button key={item.id} variant='outline' size='md'>
           <Link to={item.to}>{item.label}</Link>
         </Button>
       ))}

@@ -10,10 +10,11 @@ export const Slot = (props: SlotProps) => {
   // https://react.dev/reference/react/isValidElement
   // https://react.dev/reference/react/cloneElement
   if (isValidElement(children)) {
-    return cloneElement(children, {
+    const child = children as React.ReactElement<any, any>;
+    return cloneElement(child, {
       ...rest,
-      ...children.props,
-      className: `${rest.className ?? ''} ${children.props.className ?? ''}`,
+      ...(child.props as object),
+      className: `${rest.className ?? ''} ${child.props.className ?? ''}`,
     });
   }
 
