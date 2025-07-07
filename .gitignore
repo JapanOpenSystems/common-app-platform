@@ -1,0 +1,9 @@
+/design-system-example-components/
+
+# node_modules
+.DS_Store
+frontend/node_modules/
+
+# React Router
+frontend/.react-router/
+frontend/build/

@@ -1,7 +1,14 @@
 import * as React from "react";
 import { Link, Outlet } from "react-router";
 
-export default function HeaderLayout() {
+interface HeaderLayoutProps {
+  title?: string;
+  department?: string;
+  section?: string;
+  userName?: string;
+}
+
+export default function HeaderLayout({ title = "", department = "", section = "", userName = "" }: HeaderLayoutProps) {
   return (
     <div>
       <header className="bg-white border-b border-gray-200 shadow-sm">
@@ -10,7 +17,9 @@ export default function HeaderLayout() {
             {/* タイトル */}
             <div className="flex items-center">
               <Link to="/" className="flex items-center space-x-2">
-                <span className="text-xl font-bold text-gray-900">警務課-人事係</span>
+                <span className="text-xl font-bold text-gray-900">
+                  {title}
+                </span>
               </Link>
             </div>
 
@@ -20,13 +29,13 @@ export default function HeaderLayout() {
                 <span className="text-gray-600 font-medium">操作者</span>
                 <div className="flex items-center space-x-4">
                   <span className="text-gray-600">
-                    所属：<span className="text-gray-800 font-semibold">警務課</span>
+                    所属：<span className="text-gray-800 font-semibold">{department}</span>
                   </span>
                   <span className="text-gray-600">
-                    課・係：<span className="text-gray-800 font-semibold">人事係</span>
+                    課・係：<span className="text-gray-800 font-semibold">{section}</span>
                   </span>
                   <span className="text-gray-600">
-                    氏名：<span className="text-gray-800 font-semibold">田中太郎</span>
+                    氏名：<span className="text-gray-800 font-semibold">{userName}</span>
                   </span>
                 </div>
               </div>
