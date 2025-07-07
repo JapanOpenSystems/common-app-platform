@@ -17,41 +17,44 @@ export const buttonBaseStyle = `
 
 export const buttonVariantStyle: { [key in ButtonVariant]: string } = {
   'solid-fill': `
-    border-2
-    border-blue-900
+    border-4
+    border-double
+    border-transparent
     bg-blue-900
     text-white
-    hover:bg-blue-800
-    hover:border-blue-800
-    active:bg-blue-950
-    active:border-blue-950
-    disabled:bg-gray-300
-    disabled:border-gray-300
-    disabled:text-gray-500
+    hover:bg-blue-1000
+    hover:underline
+    active:bg-blue-1200
+    active:underline
+    aria-disabled:bg-solid-gray-300
+    aria-disabled:text-solid-gray-50
   `,
   outline: `
     border-2
-    border-blue-900
+    border-current
     bg-white
     text-blue-900
-    hover:bg-blue-50
-    hover:text-blue-800
-    active:bg-blue-100
-    active:text-blue-950
+    hover:bg-blue-200
+    hover:text-blue-1000
+    hover:underline
+    active:bg-blue-300
+    active:text-blue-1200
+    active:underline
     disabled:bg-white
-    disabled:text-gray-300
-    disabled:border-gray-300
+    disabled:text-solid-gray-300
   `,
   text: `
     text-blue-900
     underline
     hover:bg-blue-50
-    hover:text-blue-800
+    hover:text-blue-1000
+    hover:decoration-[calc(3/16*1rem)]
     active:bg-blue-100
-    active:text-blue-950
-    focus-visible:bg-yellow-200
-    disabled:bg-transparent
-    disabled:text-gray-300
+    active:text-blue-1200
+    focus-visible:bg-yellow-300
+    aria-disabled:bg-transparent
+    aria-disabled:focus-visible:bg-yellow-300
+    aria-disabled:text-solid-gray-300
   `,
 };
 
