@@ -4,10 +4,10 @@ import type { HeaderLayoutProps } from "~/components/header";
 
 
 const HeaderLayout: HeaderLayoutProps = {
-  title: "警務課-人事係",
-  department: "地 企",
-  section: "情企補",
-  userName: "田中　太郎",
+  title: "タイトル",
+  department: "組織",
+  section: "組織２",
+  userName: "苗字　氏名",
 };
 
 export default function Layout() {
