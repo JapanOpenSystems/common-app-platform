@@ -1,16 +1,29 @@
-import { Outlet } from "react-router";
+import { Outlet, useLoaderData } from "react-router";
 import { Header } from "~/components/header";
 import type { HeaderLayoutProps } from "~/components/header";
+import type { LoaderFunctionArgs } from "react-router";
+import { fetchUserInfo } from "~/lib/api";
 
+export async function loader({}: LoaderFunctionArgs) {
+  
+  // APIからユーザー情報を取得
+  const userInfo = await fetchUserInfo();
+  
+  const HeaderLayout: HeaderLayoutProps = {
+    title: "タイトル",
+    department: userInfo.department,
+    section: userInfo.section,
+    userName: userInfo.userName,
+  };
 
-const HeaderLayout: HeaderLayoutProps = {
-  title: "タイトル",
-  department: "組織",
-  section: "組織２",
-  userName: "苗字　氏名",
-};
+  return {
+    HeaderLayout,
+  };
+}
 
 export default function Layout() {
+  const { HeaderLayout } = useLoaderData<typeof loader>();
+  
   return (
     <div>
       <Header title={HeaderLayout.title} department={HeaderLayout.department} section={HeaderLayout.section} userName={HeaderLayout.userName} />

@@ -11,6 +11,5 @@ export default [
 
   layout("layouts/layout.tsx", [
     index("routes/home.tsx"),
-    route("dashbord", "routes/dashbord.tsx"),
   ]),
 ] satisfies RouteConfig;

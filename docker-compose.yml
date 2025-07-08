@@ -1,18 +1,16 @@
 services:
-  react-app:
+  frontend:
     build:
-      context: .
+      context: ./frontend
       dockerfile: Dockerfile
       args:
         USER_ID: ${USER_ID:-1000}
         GROUP_ID: ${GROUP_ID:-1000}
-    volumes:
-      - ./:/usr/src/app 
-    working_dir: /usr/src/app/frontend
-    command: yarn dev
     ports:
       - "3000:3000"
       - "5173:5173"
+    volumes:
+      - ./frontend:/app
     environment:
       - USER_ID=${USER_ID:-1000}
       - GROUP_ID=${GROUP_ID:-1000}  
