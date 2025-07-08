@@ -92,13 +92,14 @@ npm run dev
 - [デザイン庁 デザインシステム](https://www.digital.go.jp/policies/servicedesign/designsystem/)
 
 ## 📦 プロジェクト構成
+※主要なもののみ記載しています
 
 ```
 common-app-platform/
 ├── frontend/                   
 │   ├── app/                    
 │   │    ├── components/        # コンポーネント群
-│   │    │   └── design/       # デザイン庁を参考に作成したコンポーネント群
+│   │    │   └── design/        # デザイン庁を参考に作成したコンポーネント群
 │   │    ├── layouts/           # レイアウト
 │   │    ├── lib/               # ユーティリティ
 │   │    ├── routes/            # ルーティング設定後の参照ファイル
